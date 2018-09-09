@@ -8,3 +8,4 @@ tài khoản mặc định :
 - server name : localhost
 - username : root
 - password : (để rỗng)
+- db name : codeme
