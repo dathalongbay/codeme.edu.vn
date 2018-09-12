@@ -1,35 +1,27 @@
-<?php
-require "vendor/autoload.php";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "codeme.edu.vn";
+<table>
+    <thead>
+        <td>id</td>
+        <td>tieu de</td>
+        <td>noi dung</td>
+        <td>trang thai</td>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>abc</td>
+            <td>abc</td>
+            <td>1</td>
+        </tr>
+    </tbody>
+</table>
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM article";
-$result = $conn->query($sql);
-
-echo "<pre>";
-print_r($result);
-echo "</pre>";
-
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo '<br> -------';
-        echo "<pre>";
-        print_r($row);
-        echo "</pre>";
-    }
-} else {
-    echo "0 results";
-}
-$conn->close();
+</body>
+</html>
