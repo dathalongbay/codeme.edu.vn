@@ -5,6 +5,7 @@ class LinhTruong {
 
 }
 
+
 class NguoiVuon extends LinhTruong{
 
     public $tuoi;
