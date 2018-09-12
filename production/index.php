@@ -4,15 +4,32 @@ require "vendor/autoload.php";
 $servername = "localhost";
 $username = "root";
 $password = "";
+$dbname = "codeme.edu.vn";
 
 // Create connection
-$connection = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM article";
+$result = $conn->query($sql);
 
 echo "<pre>";
-print_r($connection);
+print_r($result);
 echo "</pre>";
-// Check connection
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
+
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo '<br> -------';
+        echo "<pre>";
+        print_r($row);
+        echo "</pre>";
+    }
+} else {
+    echo "0 results";
 }
-echo "Connected successfully";
+$conn->close();
