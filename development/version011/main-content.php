@@ -1,0 +1,1 @@
+<div class="main-content col-md-8">Main content</div>
