@@ -1,5 +1,5 @@
 <?php
-class articleController {
+class productController {
 
     /**
      *
@@ -11,46 +11,45 @@ class articleController {
     }
 
     /**
-     * Liệt kê tất cả các bài viết
+     * Liệt kê tất cả các sản phẩm
      */
     public function indexAction(){
-        echo '<br>' . __METHOD__;
+
     }
 
     /**
-     * Xem chi tiết 1 bài viết
+     * Xem chi tiết 1 sản phẩm
      */
     public function viewAction(){
-        echo '<br>' . __METHOD__;
+
     }
 
     /**
-     * Thêm bài viết
+     * Thêm sản phẩm
      */
     public function submitAction(){
-        echo '<br>' . __METHOD__;
+
     }
 
     /**
-     * Sửa bài viết
+     * Sửa sản phẩm
      */
     public function editAction() {
-        echo '<br>' . __METHOD__;
+
     }
 
     /**
      * Lưu dữ liệu vào trong database
      */
     public function storeAction() {
-        echo '<br>' . __METHOD__;
+
     }
 
     /**
-     * Xóa bài viết
+     * Xóa sản phẩm
      */
     public function deleteAction() {
-        echo '<br>' . __METHOD__;
-    }
 
+    }
 
 }
