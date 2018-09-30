@@ -66,6 +66,7 @@ class articleController {
      */
     public function storeAction() {
         echo '<br>' . __METHOD__;
+        die;
     }
 
     /**
