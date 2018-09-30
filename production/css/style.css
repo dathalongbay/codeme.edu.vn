@@ -33,6 +33,7 @@ a:hover {
 }
 /*--header main start here--*/
 .page-container {
+  min-height: 1000px;
   min-width: 1260px;
   position: relative;
   top: 0;

@@ -30,7 +30,7 @@ class articleController {
      */
     public function indexAction(){
         $data = array();
-        $this->view('article', 'index', $data);
+        return $this->view('article', 'index', $data);
     }
 
     /**
@@ -38,13 +38,15 @@ class articleController {
      */
     public function viewAction(){
         echo '<br>' . __METHOD__;
+
     }
 
     /**
      * Thêm bài viết
      */
     public function submitAction(){
-        echo '<br>' . __METHOD__;
+        $data = array();
+        return $this->view('article', 'submit', $data);
     }
 
     /**
