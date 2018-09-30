@@ -5,7 +5,8 @@
         </a> </div>
     <div class="menu">
         <ul id="menu" >
-            <li id="menu-home" ><a href="index.html"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
+            <li id="menu-home" ><a href="<?php echo SITE_URL; ?>"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
+            <li id="menu-article" ><a href="<?php echo SITE_URL.'?controller=article&action=index'; ?>"><i class="fa fa-tachometer"></i><span>Article</span></a></li>
             <li><a href="#"><i class="fa fa-cogs"></i><span>Components</span><span class="fa fa-angle-right" style="float: right"></span></a>
                 <ul>
                     <li><a href="grids.html">Grids</a></li>
