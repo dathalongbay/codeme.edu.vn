@@ -29,7 +29,15 @@ class articleController {
      * Liệt kê tất cả các bài viết
      */
     public function indexAction(){
+
+        $articleModel = new articleModel();
+        $articles = $articleModel->getRows();
         $data = array();
+        $data['articles'] = $articles;
+
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
         return $this->view('article', 'index', $data);
     }
 
