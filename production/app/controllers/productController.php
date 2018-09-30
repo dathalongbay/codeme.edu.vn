@@ -14,7 +14,8 @@ class productController {
      * Liệt kê tất cả các sản phẩm
      */
     public function indexAction(){
-
+        $data = array();
+        return $this->view('product', 'index', $data);
     }
 
     public function view($view = '', $action = '', $data = '') {
