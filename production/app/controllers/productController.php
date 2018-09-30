@@ -17,6 +17,21 @@ class productController {
 
     }
 
+    public function view($view = '', $action = '', $data = '') {
+        ob_start();
+
+        extract($data);
+
+        $view_path = VIEW_PATH . '/' . $view . '/' . $action . '.php';
+        require $view_path;
+
+        $output = ob_get_contents();
+
+        ob_end_clean();
+
+        echo $output;
+    }
+
     /**
      * Xem chi tiết 1 sản phẩm
      */

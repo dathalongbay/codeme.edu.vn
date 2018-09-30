@@ -7,6 +7,7 @@
         <ul id="menu" >
             <li id="menu-home" ><a href="<?php echo SITE_URL; ?>"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
             <li id="menu-article" ><a href="<?php echo SITE_URL.'?controller=article&action=index'; ?>"><i class="fa fa-tachometer"></i><span>Article</span></a></li>
+            <li id="menu-prodcut" ><a href="<?php echo SITE_URL.'?controller=product&action=index'; ?>"><i class="fa fa-tachometer"></i><span>Product</span></a></li>
             <li><a href="#"><i class="fa fa-cogs"></i><span>Components</span><span class="fa fa-angle-right" style="float: right"></span></a>
                 <ul>
                     <li><a href="grids.html">Grids</a></li>
