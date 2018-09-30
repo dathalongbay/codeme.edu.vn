@@ -10,11 +10,28 @@ class articleController {
 
     }
 
+    public function view($view = '', $action = '', $data = '') {
+        ob_start();
+
+        extract($data);
+
+        $view_path = VIEW_PATH . '/' . $view . '/' . $action . '.php';
+        require $view_path;
+
+        $output = ob_get_contents();
+
+        ob_end_clean();
+
+        echo $output;
+    }
+
     /**
      * Liệt kê tất cả các bài viết
      */
     public function indexAction(){
         echo '<br>' . __METHOD__;
+        $data = array();
+        $this->view('article', 'index', $data);
     }
 
     /**

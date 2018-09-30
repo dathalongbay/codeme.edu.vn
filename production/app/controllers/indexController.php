@@ -10,30 +10,34 @@ class indexController {
 
     }
 
-    public function view($view, $action, $data) {
+    public function view($view = '', $action = '', $data = '') {
         ob_start();
 
         extract($data);
 
-        if (IS_ADMIN == 1) {
-            require ADMIN_VIEW_PATH.'/'.$view.'/'.$action.'.php';
-        } else {
-            require VIEW_PATH.'/'.$view.'/'.$action.'.php';
-        }
+        $view_path = VIEW_PATH . '/' . $view . '/' . $action . '.php';
+        require $view_path;
 
-        $out = ob_get_contents();
+        $output = ob_get_contents();
 
         ob_end_clean();
 
-        echo $out;
+        echo $output;
     }
 
     /**
      * Default action
      */
     public function indexAction() {
-        echo '<br>' . __METHOD__;
-        return $this->view();
+        $view_folder = 'index';
+        $action_name = 'index';
+        $data = array(
+            'name' => 'T3H',
+            'name1' => 'T3H1',
+            'phone' => '012345566',
+            'address' => 'ha noi',
+            'passport' => '12345678');
+        return $this->view($view_folder, $action_name, $data);
     }
 
 
