@@ -6,6 +6,9 @@
             <?php require VIEW_PATH . '/partial/main-header.php';  ?>
             <div class="inner-block">
                 <h1>Quản lý bài viết</h1>
+                <div>
+                    <a href="<?php echo SITE_URL.'?controller=article&action=submit' ?>" class="btn btn-success">Thêm mới bài viết</a>
+                </div>
                 <table class="table">
                     <thead>
                     <tr>

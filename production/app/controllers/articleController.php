@@ -29,7 +29,6 @@ class articleController {
      * Liệt kê tất cả các bài viết
      */
     public function indexAction(){
-        echo '<br>' . __METHOD__;
         $data = array();
         $this->view('article', 'index', $data);
     }
