@@ -35,9 +35,6 @@ class articleController {
         $data = array();
         $data['articles'] = $articles;
 
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
         return $this->view('article', 'index', $data);
     }
 

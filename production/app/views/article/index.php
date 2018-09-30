@@ -6,33 +6,34 @@
             <?php require VIEW_PATH . '/partial/main-header.php';  ?>
             <div class="inner-block">
                 <h1>Quản lý bài viết</h1>
+                <?php
+                echo "<pre>";
+                print_r($articles);
+                echo "</pre>";
+                ?>
                 <div>
                     <a href="<?php echo SITE_URL.'?controller=article&action=submit' ?>" class="btn btn-success">Thêm mới bài viết</a>
                 </div>
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Email</th>
+                        <th>Id</th>
+                        <th>Tiêu đề</th>
+                        <th>Nội dung</th>
+                        <th>Trạng thái</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>john@example.com</td>
-                    </tr>
-                    <tr>
-                        <td>Mary</td>
-                        <td>Moe</td>
-                        <td>mary@example.com</td>
-                    </tr>
-                    <tr>
-                        <td>July</td>
-                        <td>Dooley</td>
-                        <td>july@example.com</td>
-                    </tr>
+                    <?php if ($articles) : ?>
+                        <?php foreach ($articles as $article) : ?>
+                            <tr>
+                                <td><?php echo $article['id'] ?></td>
+                                <td><?php echo $article['title'] ?></td>
+                                <td><?php echo $article['article_content'] ?></td>
+                                <td><?php echo $article['status'] ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                     </tbody>
                 </table>
             </div>
