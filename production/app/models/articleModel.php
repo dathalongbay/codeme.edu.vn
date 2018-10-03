@@ -30,6 +30,9 @@ class articleModel extends Database {
 
     public function store($data) {
 
+        $location = "ha noi";
+        $name = "Nguyen van anh" . " sn 2000" . $location;
+
         echo '<pre>';
         print_r($data);
         echo '</pre>';
