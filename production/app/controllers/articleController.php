@@ -65,6 +65,9 @@ class articleController {
      * Lưu dữ liệu vào trong database
      */
     public function storeAction() {
+        echo '<pre>';
+        print_r($_POST);
+        echo '</pre>';
         echo '<br>' . __METHOD__;
         die;
     }

@@ -28,6 +28,18 @@ class articleModel extends Database {
         return $data;
     }
 
+    public function store() {
+
+        $sql = "INSERT INTO article (title, article_content, status)
+VALUES ('Test', 'Test', 1)";
+
+        if ($this->conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $this->conn->error;
+        }
+    }
+
 
 
 }
