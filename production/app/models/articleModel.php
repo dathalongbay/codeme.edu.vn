@@ -38,12 +38,17 @@ class articleModel extends Database {
         print_r($data);
         echo '</pre>';
 
-        $sql1 = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('John', 'Doe', 'john@example.com')";
+        $sql_step0 = "INSERT INTO article (title, article_content, status)
+VALUES ('John', 'Doe', 0)";
+        echo "<br>" . $sql_step0;
 
-        $sql = "INSERT INTO article (title, article_content, status)
+        $sql_step1 = "INSERT INTO article (title, article_content, status)
+VALUES (". $data['title'] .", ".$data['article_content'].", ".$data['status'].")";
+        echo "<br>" . $sql_step1;
+
+        $sql_step2 = "INSERT INTO article (title, article_content, status)
 VALUES ('". $data['title'] ."', '".$data['article_content']."', ".$data['status'].")";
-        echo $sql;
+        echo "<br>" . $sql_step2;
         die;
 
         if ($this->conn->query($sql) === TRUE) {
