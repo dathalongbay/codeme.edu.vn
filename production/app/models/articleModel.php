@@ -28,10 +28,19 @@ class articleModel extends Database {
         return $data;
     }
 
-    public function store() {
+    public function store($data) {
+
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+
+        $sql1 = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')";
 
         $sql = "INSERT INTO article (title, article_content, status)
-VALUES ('Test', 'Test', 1)";
+VALUES ('". $data['title'] ."', '".$data['article_content']."', ".$data['status'].")";
+        echo $sql;
+        die;
 
         if ($this->conn->query($sql) === TRUE) {
             echo "New record created successfully";
