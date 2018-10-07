@@ -7,10 +7,14 @@
             <div class="inner-block">
                 <h1>Thêm mới bài viết</h1>
 
-                <form name="article" method="post" action="<?php echo SITE_URL . '?controller=article&action=store'?>">
+                <form name="article" method="post" action="<?php echo SITE_URL . '?controller=article&action=store'?>" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="title">Tiêu đề:</label>
                         <input type="text" name="title" class="form-control" id="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Ảnh đại diện:</label>
+                        <input type="file" name="image" id="image">
                     </div>
                     <div class="form-group">
                         <label for="content">Nội dung:</label>
