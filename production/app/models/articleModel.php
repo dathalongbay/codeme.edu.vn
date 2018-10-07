@@ -67,5 +67,18 @@ VALUES ('". $data['title'] ."', '".$data['article_content']."', ".$data['status'
     }
 
 
+    public function delete($id) {
+
+        $sql = "DELETE FROM article WHERE id=".$id;
+
+        if ($this->conn->query($sql) === TRUE) {
+            echo "Delete record successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $this->conn->error;
+        }
+
+    }
+
+
 
 }

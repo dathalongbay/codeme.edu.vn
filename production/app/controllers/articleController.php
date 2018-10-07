@@ -82,7 +82,14 @@ class articleController {
      * Xóa bài viết
      */
     public function deleteAction() {
-        echo '<br>' . __METHOD__;
+        $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+        if ($id > 0) {
+            $articleModel = new articleModel();
+            $articleModel->delete($id);
+        }
+        echo '<br>' . __METHOD__; die;
+        header("Location: http://localhost/codeme.edu.vn/production/?controller=article&action=index");
+        die();
     }
 
 
