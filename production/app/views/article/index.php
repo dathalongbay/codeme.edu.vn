@@ -50,6 +50,7 @@
             if (r == true) {
                 var target = $(this).attr('href');
                 console.log(target);
+                window.location.href = target;
             } else {
 
             }
