@@ -27,7 +27,7 @@
                                 <td><?php echo $article['status'] ?></td>
                                 <td>
                                     <a class="btn btn-warning" href="<?php echo SITE_URL.'?controller=article&action=edit&id='.$article['id'] ?>">Sửa</a>
-                                    <a class="btn btn-danger" href="<?php echo SITE_URL.'?controller=article&action=delete&id='.$article['id'] ?>">Xóa</a>
+                                    <a class="btn btn-danger remove" href="<?php echo SITE_URL.'?controller=article&action=delete&id='.$article['id'] ?>">Xóa</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
