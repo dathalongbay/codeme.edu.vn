@@ -63,9 +63,6 @@ class articleController {
         $articleModel = new articleModel();
         $data['article'] = $articleModel->getRow($id);
 
-        echo '<pre>';
-        print_r($data);
-        echo '</pre>';
         return $this->view('article', 'edit', $data);
     }
 
