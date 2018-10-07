@@ -14,8 +14,8 @@
                     <tr>
                         <th>Id</th>
                         <th>Tiêu đề</th>
-                        <th>Nội dung</th>
                         <th>Trạng thái</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -24,8 +24,11 @@
                             <tr>
                                 <td><?php echo $article['id'] ?></td>
                                 <td><?php echo $article['title'] ?></td>
-                                <td><?php echo $article['article_content'] ?></td>
                                 <td><?php echo $article['status'] ?></td>
+                                <td>
+                                    <a class="btn btn-warning" href="<?php echo SITE_URL.'?controller=article&action=edit&id='.$article['id'] ?>">Sửa</a>
+                                    <a class="btn btn-danger" href="<?php echo SITE_URL.'?controller=article&action=delete&id='.$article['id'] ?>">Xóa</a>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     <?php endif; ?>
