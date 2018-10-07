@@ -9,6 +9,7 @@ define("APP_PATH", $admin_path.'/app');
 define("CONTROLLER_PATH", $admin_path.'/app/controllers');
 define("MODEL_PATH", $admin_path.'/app/models');
 define("VIEW_PATH", $admin_path.'/app/views');
+define("UPLOAD_PATH", $admin_path.'/upload');
 
 spl_autoload_register(function ($class_name) {
     $paths = array(ADMIN_PATH, CORE_PATH, DATABASE_PATH, APP_PATH, CONTROLLER_PATH, MODEL_PATH, VIEW_PATH);

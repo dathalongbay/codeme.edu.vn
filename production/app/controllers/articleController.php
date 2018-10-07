@@ -70,9 +70,22 @@ class articleController {
      * Lưu dữ liệu vào trong database
      */
     public function storeAction() {
+        echo '<pre>';
+        print_r($_FILES);
+        echo '</pre>';
+
+
         $data = $_POST;
         $articleModel = new articleModel();
         $articleModel->store($data);
+
+        $upload = new Upload();
+        $upload_result = $upload->upload($_FILES);
+
+        echo '<pre>';
+        print_r($upload_result);
+        echo '</pre>';
+        die;
 
         header("Location: http://localhost/codeme.edu.vn/production/?controller=article&action=index");
         die();
