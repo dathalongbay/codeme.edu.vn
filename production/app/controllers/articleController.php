@@ -74,7 +74,6 @@ class articleController {
         print_r($_FILES);
         echo '</pre>';
 
-
         $data = $_POST;
         $articleModel = new articleModel();
         $articleModel->store($data);

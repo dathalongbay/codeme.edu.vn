@@ -15,7 +15,7 @@ class Upload {
 
     public function upload($files) {
 
-        $target_dir = $this->target_dir."/article";
+        $target_dir = $this->target_dir."/article/";
         $target_file = $target_dir . basename($files["image"]["name"]);
         $this->upload_ok = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
