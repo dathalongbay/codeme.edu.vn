@@ -68,11 +68,9 @@ class articleController {
         $data = $_POST;
         $articleModel = new articleModel();
         $articleModel->store($data);
-        echo '<pre>';
-        print_r($_POST);
-        echo '</pre>';
-        echo '<br>' . __METHOD__;
-        die;
+
+        header("Location: http://localhost/codeme.edu.vn/production/?controller=article&action=index");
+        die();
     }
 
     /**
