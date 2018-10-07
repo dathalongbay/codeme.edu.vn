@@ -58,7 +58,14 @@ class articleController {
      * Sửa bài viết
      */
     public function editAction() {
+        $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
         $data = array();
+        $articleModel = new articleModel();
+        $data['article'] = $articleModel->getRow($id);
+
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
         return $this->view('article', 'edit', $data);
     }
 

@@ -28,6 +28,19 @@ class articleModel extends Database {
         return $data;
     }
 
+    public function getRow($id) {
+        $data = null;
+        $sql = "SELECT * FROM article WHERE id=" . $id;
+        $result = $this->conn->query($sql);
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $data = $row;
+            }
+        }
+        return $data;
+    }
+
     public function store($data) {
 
         $location = "ha noi";
