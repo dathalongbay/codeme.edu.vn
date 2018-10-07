@@ -87,7 +87,7 @@ class articleController {
             $articleModel = new articleModel();
             $articleModel->delete($id);
         }
-        echo '<br>' . __METHOD__; die;
+
         header("Location: http://localhost/codeme.edu.vn/production/?controller=article&action=index");
         die();
     }
