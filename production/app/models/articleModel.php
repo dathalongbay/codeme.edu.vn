@@ -59,8 +59,6 @@ VALUES ('". $data['title'] ."', '".$data['article_content']."', ".$data['status'
 
         }
 
-        echo $sql; die;
-
         if ($this->conn->query($sql) === TRUE) {
             echo "New record created successfully";
         } else {
