@@ -41,6 +41,22 @@
     <?php require VIEW_PATH . '/partial/sidebar.php';  ?>
 
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("a.remove").on('click', function (e) {
+            e.preventDefault();
+
+            var r = confirm("Bạn có chắc chắn muốn xóa bản ghi này không ?");
+            if (r == true) {
+                var target = $(this).attr('href');
+                console.log(target);
+            } else {
+
+            }
+        });
+    });
+
+</script>
 <!--slide bar menu end here-->
 <?php require VIEW_PATH . '/partial/footer.php';  ?>
 </body>
