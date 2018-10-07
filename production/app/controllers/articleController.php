@@ -58,7 +58,8 @@ class articleController {
      * Sửa bài viết
      */
     public function editAction() {
-        echo '<br>' . __METHOD__;
+        $data = array();
+        return $this->view('article', 'edit', $data);
     }
 
     /**
