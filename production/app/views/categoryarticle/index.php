@@ -14,6 +14,9 @@
                     <tr>
                         <th>Id</th>
                         <th>Tên</th>
+                        <th>Parent ID</th>
+                        <th>Parent</th>
+                        <th>Level</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -23,6 +26,9 @@
                             <tr>
                                 <td><?php echo $category['id'] ?></td>
                                 <td><?php echo $category['category_name'] ?></td>
+                                <td><?php echo $category['parent_id'] ?></td>
+                                <td><?php echo $category['parent_id'] ?></td>
+                                <td><?php echo $category['level'] ?></td>
                                 <td>
                                     <a class="btn btn-warning" href="<?php echo SITE_URL.'?controller=categoryarticle&action=edit&id='.$category['id'] ?>">Sửa</a>
                                     <a class="btn btn-danger remove" href="<?php echo SITE_URL.'?controller=categoryarticle&action=delete&id='.$category['id'] ?>">Xóa</a>
