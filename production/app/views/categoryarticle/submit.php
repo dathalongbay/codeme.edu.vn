@@ -5,30 +5,32 @@
         <div class="mother-grid-inner">
             <?php require VIEW_PATH . '/partial/main-header.php';  ?>
             <div class="inner-block">
-                <h1>Thêm mới bài viết</h1>
+                <h1>Thêm mới danh mục</h1>
 
-                <form name="article" method="post" action="<?php echo SITE_URL . '?controller=article&action=store'?>" enctype="multipart/form-data">
+                <form name="category" method="post" action="<?php echo SITE_URL . '?controller=categoryarticle&action=store'?>" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="title">Tiêu đề:</label>
-                        <input type="text" name="title" class="form-control" id="title">
+                        <label for="name">Tên danh mục:</label>
+                        <input type="text" name="category_name" class="form-control" id="name">
                     </div>
                     <div class="form-group">
-                        <label for="title">Ảnh đại diện:</label>
-                        <input type="file" name="image" id="image">
+                        <label for="content">Nội dung ngắn:</label>
+                        <p>
+                            <textarea name="category_intro" style="width: 80%"></textarea>
+                        </p>
                     </div>
                     <div class="form-group">
                         <label for="content">Nội dung:</label>
                         <p>
-                            <textarea name="article_content" style="width: 80%"></textarea>
+                            <textarea name="category_desc" style="width: 80%"></textarea>
                         </p>
                     </div>
                     <div class="form-group">
-                        <label for="status">Trạng thái:</label>
-                        <select name="status">
-                            <option value="0">Ẩn</option>
-                            <option value="1">Hiện</option>
-                        </select>
+                        <label for="content">Thời gian tạo:</label>
+                        <p>
+                            <input type="text" name="created" class="form-control" id="name">
+                        </p>
                     </div>
+
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
 
