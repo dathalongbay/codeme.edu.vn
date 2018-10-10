@@ -82,6 +82,7 @@ class articleController {
         $upload_result = $upload->upload($_FILES);
 
         echo '<pre>';
+
         print_r($upload_result);
         echo '</pre>';
         die;
