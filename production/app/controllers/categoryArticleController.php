@@ -31,9 +31,19 @@ class categoryArticleController {
     public function indexAction(){
 
         $categoryArticleModel = new categoryArticleModel();
-        $catgories = $categoryArticleModel->getRows();
+        $categories = $categoryArticleModel->getRows();
+
+        $parents = array();
+
+        foreach($categories as $key => $value) {
+
+            $category_id = (int) $value['id'];
+            $parents[$category_id] = $value;
+        }
+
         $data = array();
-        $data['categories'] = $catgories;
+        $data['categories'] = $categories;
+        $data['parents'] = $parents;
 
         return $this->view('categoryarticle', 'index', $data);
     }

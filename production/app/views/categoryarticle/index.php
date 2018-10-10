@@ -21,7 +21,11 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php if ($categories) : ?>
+                    <?php if ($categories) :
+                        echo '<pre>';
+                        print_r($parents);
+                        echo '</pre>';
+                        ?>
                         <?php foreach ($categories as $category) : ?>
                             <tr>
                                 <td><?php echo $category['id'] ?></td>
