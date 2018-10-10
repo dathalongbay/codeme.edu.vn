@@ -3,7 +3,7 @@ class categoryArticleController {
 
     /**
      *
-     * articleController constructor.
+     * categoryArticleController constructor.
      */
     public function __construct()
     {
@@ -26,20 +26,20 @@ class categoryArticleController {
     }
 
     /**
-     * Liệt kê tất cả các bài viết
+     * Liệt kê tất cả các danh mục
      */
     public function indexAction(){
 
-        $articleModel = new articleModel();
-        $articles = $articleModel->getRows();
+        $categoryArticleModel = new categoryArticleModel();
+        $catgories = $categoryArticleModel->getRows();
         $data = array();
-        $data['articles'] = $articles;
+        $data['catgories'] = $catgories;
 
-        return $this->view('article', 'index', $data);
+        return $this->view('categoryarticle', 'index', $data);
     }
 
     /**
-     * Xem chi tiết 1 bài viết
+     * Xem chi tiết 1 danh mục
      */
     public function viewAction(){
         echo '<br>' . __METHOD__;
@@ -47,23 +47,23 @@ class categoryArticleController {
     }
 
     /**
-     * Thêm bài viết
+     * Thêm danh mục
      */
     public function submitAction(){
         $data = array();
-        return $this->view('article', 'submit', $data);
+        return $this->view('categoryarticle', 'submit', $data);
     }
 
     /**
-     * Sửa bài viết
+     * Sửa danh mục
      */
     public function editAction() {
         $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
         $data = array();
-        $articleModel = new articleModel();
-        $data['article'] = $articleModel->getRow($id);
+        $categoryArticleModel = new categoryArticleModel();
+        $data['category'] = $categoryArticleModel->getRow($id);
 
-        return $this->view('article', 'edit', $data);
+        return $this->view('categoryarticle', 'edit', $data);
     }
 
     /**
@@ -75,8 +75,8 @@ class categoryArticleController {
         echo '</pre>';
 
         $data = $_POST;
-        $articleModel = new articleModel();
-        $articleModel->store($data);
+        $categoryArticleModel = new categoryArticleModel();
+        $categoryArticleModel->store($data);
 
         $upload = new Upload();
         $upload_result = $upload->upload($_FILES);
@@ -87,21 +87,21 @@ class categoryArticleController {
         echo '</pre>';
         die;
 
-        header("Location: http://localhost/codeme.edu.vn/production/?controller=article&action=index");
+        header("Location: http://localhost/codeme.edu.vn/production/?controller=categoryArticle&action=index");
         die();
     }
 
     /**
-     * Xóa bài viết
+     * Xóa danh mục
      */
     public function deleteAction() {
         $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
         if ($id > 0) {
-            $articleModel = new articleModel();
-            $articleModel->delete($id);
+            $categoryArticleModel = new categoryArticleModel();
+            $categoryArticleModel->delete($id);
         }
 
-        header("Location: http://localhost/codeme.edu.vn/production/?controller=article&action=index");
+        header("Location: http://localhost/codeme.edu.vn/production/?controller=categoryArticle&action=index");
         die();
     }
 
