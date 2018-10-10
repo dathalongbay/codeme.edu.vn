@@ -47,7 +47,7 @@ class categoryArticleModel extends Database {
 
         if ($data['id'] > 0) {
             // Trường hợp edit
-            $sql = "UPDATE category_article SET title='". $data['title'] ."',article_content='".$data['article_content']."',status=".$data['status']." WHERE id=".$data['id'];
+            $sql = "UPDATE category_article SET category_name='". $data['category_name'] ."',category_intro='".$data['category_intro']."',category_desc='".$data['category_desc']."',created=".$data['created'].",parent_id=".$data['parent_id'].",level=".$data['level']."  WHERE id=".$data['id'];
         } else {
             // Trường hợp thêm mới
             $sql = "INSERT INTO category_article (category_name, category_intro, category_desc, created, parent_id, level)
