@@ -33,7 +33,7 @@ class categoryArticleController {
         $categoryArticleModel = new categoryArticleModel();
         $catgories = $categoryArticleModel->getRows();
         $data = array();
-        $data['catgories'] = $catgories;
+        $data['categories'] = $catgories;
 
         return $this->view('categoryarticle', 'index', $data);
     }

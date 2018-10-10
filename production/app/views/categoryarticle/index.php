@@ -5,29 +5,27 @@
         <div class="mother-grid-inner">
             <?php require VIEW_PATH . '/partial/main-header.php';  ?>
             <div class="inner-block">
-                <h1>Quản lý bài viết</h1>
+                <h1>Quản lý danh mục</h1>
                 <div>
-                    <a href="<?php echo SITE_URL.'?controller=article&action=submit' ?>" class="btn btn-success">Thêm mới bài viết</a>
+                    <a href="<?php echo SITE_URL.'?controller=categoryarticle&action=submit' ?>" class="btn btn-success">Thêm mới danh mục</a>
                 </div>
                 <table class="table">
                     <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Tiêu đề</th>
-                        <th>Trạng thái</th>
+                        <th>Tên</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php if ($articles) : ?>
-                        <?php foreach ($articles as $article) : ?>
+                    <?php if ($categories) : ?>
+                        <?php foreach ($categories as $category) : ?>
                             <tr>
-                                <td><?php echo $article['id'] ?></td>
-                                <td><?php echo $article['title'] ?></td>
-                                <td><?php echo $article['status'] ?></td>
+                                <td><?php echo $category['id'] ?></td>
+                                <td><?php echo $category['category_name'] ?></td>
                                 <td>
-                                    <a class="btn btn-warning" href="<?php echo SITE_URL.'?controller=article&action=edit&id='.$article['id'] ?>">Sửa</a>
-                                    <a class="btn btn-danger remove" href="<?php echo SITE_URL.'?controller=article&action=delete&id='.$article['id'] ?>">Xóa</a>
+                                    <a class="btn btn-warning" href="<?php echo SITE_URL.'?controller=categoryarticle&action=edit&id='.$category['id'] ?>">Sửa</a>
+                                    <a class="btn btn-danger remove" href="<?php echo SITE_URL.'?controller=categoryarticle&action=delete&id='.$category['id'] ?>">Xóa</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
