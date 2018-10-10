@@ -1,0 +1,9 @@
+
+Id         - Tên           - Cha            - Level
+1         Điện tử            0              1
+2         Điện thoại         1              2
+3         Máy giặt           1              2
+4         Điện thoại TM      2              3
+5         Điện thoại PT      2              3
+6         Điện thoại VIP     4              4
+7         Laptop             1              2
