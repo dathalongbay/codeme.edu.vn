@@ -26,12 +26,22 @@
                         print_r($parents);
                         echo '</pre>';
                         ?>
-                        <?php foreach ($categories as $category) : ?>
+                        <?php foreach ($categories as $category) :
+                            $parent_id = (int) $category['parent_id'];
+                            if (isset($parents[$parent_id])) {
+                                $parent = $parents[$parent_id];
+                            } else {
+                                $parent = null;
+                            }
+
+                        ?>
                             <tr>
                                 <td><?php echo $category['id'] ?></td>
                                 <td><?php echo $category['category_name'] ?></td>
                                 <td><?php echo $category['parent_id'] ?></td>
-                                <td><?php echo $category['parent_id'] ?></td>
+                                <td><?php echo '<pre>';
+                                    print_r($parent);
+                                    echo '</pre>'; ?></td>
                                 <td><?php echo $category['level'] ?></td>
                                 <td>
                                     <a class="btn btn-warning" href="<?php echo SITE_URL.'?controller=categoryarticle&action=edit&id='.$category['id'] ?>">Sửa</a>
