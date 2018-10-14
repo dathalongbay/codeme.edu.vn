@@ -35,4 +35,12 @@ function danso($param) {
     echo '<pre>';
     print_r($param);
     echo '</pre>';
+    return true;
 }
+
+// Gọi hàm
+danso($quocgia);
+
+echo '<pre>';
+print_r($quocgia);
+echo '</pre>';
