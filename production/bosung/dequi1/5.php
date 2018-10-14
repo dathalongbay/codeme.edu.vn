@@ -6,7 +6,7 @@ $quocgia[] = array('id' => 2, 'name' => 'Trung quốc');
 $quocgia[] = array('id' => 3, 'name' => 'Hàn quốc');
 $quocgia[] = array('id' => 4, 'name' => 'Hoa Kỳ');
 $quocgia[] = array('id' => 5, 'name' => 'Canada');
-
+echo '<br> Bên ngoài hàm lần 1 :';
 echo '<pre>';
 print_r($quocgia);
 echo '</pre>';
@@ -40,7 +40,7 @@ function danso($param) {
 
 // Gọi hàm
 danso($quocgia);
-
+echo '<br> Bên ngoài hàm :';
 echo '<pre>';
 print_r($quocgia);
 echo '</pre>';
