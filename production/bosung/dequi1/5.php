@@ -11,7 +11,7 @@ echo '<pre>';
 print_r($quocgia);
 echo '</pre>';
 
-function danso($param) {
+function danso(&$param) {
     if (!empty($param)) {
         foreach ($param as $key => $value) {
             if ($value['name'] == 'Việt nam') {
