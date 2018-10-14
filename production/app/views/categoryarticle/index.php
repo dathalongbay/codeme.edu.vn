@@ -21,10 +21,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php if ($categories) :
-                        echo '<pre>';
-                        print_r($parents);
-                        echo '</pre>';
+                    <?php
+
+                    echo '<pre>';
+                    print_r($parents);
+                    echo '</pre>';
+
+                    if ($categories) :
+
                         ?>
                         <?php foreach ($categories as $category) :
                             $parent_id = (int) $category['parent_id'];
