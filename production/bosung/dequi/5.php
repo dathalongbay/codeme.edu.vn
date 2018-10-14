@@ -42,3 +42,18 @@ foreach ($categories as $category) {
     ?><div><?php echo $category['id'] . ' - ' . $category['name'] . '('.$category['parent_id'].')'?></div> <?php
 }
 
+function deleteCategory(&$categories, $delete_id) {
+    if ($categories) {
+        foreach($categories as $key => $category) {
+            if ($category['id'] == $delete_id){
+                unset($categories[$key]);
+            }
+        }
+    }
+}
+
+deleteCategory($categories, 1);
+echo '<br> Sau khi xóa : ';
+echo '<pre>';
+print_r($categories);
+echo '</pre>';
