@@ -31,7 +31,7 @@ class categoryArticleController {
     public function indexAction(){
 
         $categoryArticleModel = new categoryArticleModel();
-        $categories = $categoryArticleModel->getRows();
+        $categories = $categoryArticleModel->getListCategories();
 
         $parents = array();
 

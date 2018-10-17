@@ -14,6 +14,23 @@ class categoryArticleModel extends Database {
 
     public function getListCategories() {
 
+        $data = $this->getRows();
+        $result = array();
+        $this->recursiveCategory($data, 0, 1, $result);
+        return $result;
+    }
+
+    function recursiveCategory($source, $parent_id, $level, &$result) {
+        if (!empty($source)) {
+            foreach($source as $key => $category) {
+                if ($category['parent_id'] == $parent_id) {
+                    $category['level'] = $level;
+                    $result[] = $category;
+                    unset($source[$key]);
+                    $this->recursiveCategory($source, $category['id'], $level+1,$result );
+                }
+            }
+        }
     }
 
     public function getRows() {

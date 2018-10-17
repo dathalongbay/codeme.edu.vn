@@ -37,7 +37,7 @@
                         ?>
                             <tr>
                                 <td><?php echo $category['id'] ?></td>
-                                <td><?php echo $category['category_name'] ?></td>
+                                <td><?php echo str_repeat('-', $category['level']) . $category['category_name'] ?></td>
                                 <td><?php echo $category['parent_id'] ?></td>
 
                                 <td><?php echo $parent['category_name'] ?></td>
