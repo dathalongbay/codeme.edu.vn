@@ -64,7 +64,11 @@ class categoryArticleModel extends Database {
 
     public function store($data) {
 
-
+        echo __METHOD__;
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+        die;
 
         if ($data['id'] > 0) {
             // Trường hợp edit

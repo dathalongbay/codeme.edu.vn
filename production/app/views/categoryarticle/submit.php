@@ -13,6 +13,17 @@
                         <input type="text" name="category_name" class="form-control" id="name">
                     </div>
                     <div class="form-group">
+                        <label for="name">Chọn danh mục cha:</label>
+                        <select name="parent_id">
+                            <option value="0">None</option>
+                            <?php if ($categories) : ?>
+                                <?php foreach($categories as $category) : ?>
+                                <option value="<?php echo $category['id'] ?>"><?php echo str_repeat('-',$category['level']) . $category['category_name'] ?></option>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="content">Nội dung ngắn:</label>
                         <p>
                             <textarea name="category_intro" style="width: 80%"></textarea>
