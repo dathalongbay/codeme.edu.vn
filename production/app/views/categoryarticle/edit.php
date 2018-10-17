@@ -17,7 +17,7 @@
                     <div class="form-group">
                         <label for="name">Chọn danh mục cha:</label>
                         <select name="parent_id">
-                            <?php $selected = ($cat['id'] == $category['parent_id']) ? 'selected' : '' ?>
+                            <?php $selected = (0 == $category['parent_id']) ? 'selected' : '' ?>
                             <option value="0" <?php echo $selected ?>>None</option>
                             <?php if ($categories) : ?>
                                 <?php foreach($categories as $cat) : ?>
