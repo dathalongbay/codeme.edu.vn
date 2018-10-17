@@ -2,7 +2,7 @@
 
     $(document).ready(function(){
         $('.datetime').datetimepicker({
-            format:'d-m-Y H:i:s',
+            format:'Y-m-d H:i:s',
         });
 
 

@@ -81,7 +81,6 @@ class categoryArticleModel extends Database {
                 $level = 1;
             }
 
-            $data['created'] = '';
 
             // Trường hợp thêm mới
             $sql = "INSERT INTO category_article (category_name, category_intro, category_desc, created, parent_id, level)
