@@ -23,10 +23,6 @@
                     <tbody>
                     <?php
 
-                    echo '<pre>';
-                    print_r($parents);
-                    echo '</pre>';
-
                     if ($categories) :
 
                         ?>

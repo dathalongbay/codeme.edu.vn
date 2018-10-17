@@ -12,6 +12,10 @@ class categoryArticleModel extends Database {
         $this->conn = self::$connection;
     }
 
+    public function getListCategories() {
+
+    }
+
     public function getRows() {
 
         $data = array();

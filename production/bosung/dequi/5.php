@@ -1,6 +1,6 @@
 <?php
 
-
+echo '<br> Trước khi xóa : ';
 $categories = array();
 $categories[] = array('id' => 1, 'name' => 'Thiết bị điện tử', 'parent_id' => 0);
 $categories[] = array('id' => 2, 'name' => 'Phụ kiện điện tử', 'parent_id' => 0);
@@ -47,6 +47,10 @@ function deleteCategory(&$categories, $delete_id) {
         foreach($categories as $key => $category) {
             if ($category['id'] == $delete_id){
                 unset($categories[$key]);
+            }
+            if ($category['parent_id'] == $delete_id) {
+                unset($categories[$key]);
+                deleteCategory($categories, $category['id']);
             }
         }
     }
