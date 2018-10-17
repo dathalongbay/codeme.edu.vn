@@ -38,7 +38,7 @@
                     <div class="form-group">
                         <label for="content">Thời gian tạo:</label>
                         <p>
-                            <input type="text" name="created" class="form-control" id="name">
+                            <input type="text" name="created" class="form-control datetime" id="created">
                         </p>
                     </div>
 

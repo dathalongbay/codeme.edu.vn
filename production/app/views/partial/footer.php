@@ -1,4 +1,12 @@
 <script>
+
+    $(document).ready(function(){
+        $('.datetime').datetimepicker({
+            format:'d-m-Y H:i:s',
+        });
+
+
+    });
     var toggle = true;
 
     $(".sidebar-icon").click(function() {

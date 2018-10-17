@@ -16,8 +16,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <!-- Custom Theme files -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" media="all"/>
     <!--js-->
     <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery.datetimepicker.full.js"></script>
     <!--icons-css-->
     <link href="css/font-awesome.css" rel="stylesheet">
     <!--Google Fonts-->
