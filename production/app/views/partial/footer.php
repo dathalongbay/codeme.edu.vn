@@ -5,7 +5,6 @@
             format:'Y-m-d H:i:s',
         });
 
-
     });
     var toggle = true;
 

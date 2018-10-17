@@ -12,37 +12,37 @@
                     <input type="hidden" name="id" value="<?php echo $category['id'] ?>">
                     <div class="form-group">
                         <label for="title">Tiêu đề:</label>
-                        <input type="text" name="title" value="<?php echo $category['title'] ?>" class="form-control" id="title">
+                        <input type="text" name="title" value="<?php echo $category['category_name'] ?>" class="form-control" id="title">
                     </div>
                     <div class="form-group">
                         <label for="name">Chọn danh mục cha:</label>
                         <select name="parent_id">
-                            <option value="0">None</option>
+                            <?php $selected = ($cat['id'] == $category['parent_id']) ? 'selected' : '' ?>
+                            <option value="0" <?php echo $selected ?>>None</option>
                             <?php if ($categories) : ?>
-                                <?php foreach($categories as $category) : ?>
-                                    <option value="<?php echo $category['id'] ?>">
-                                        <?php echo str_repeat('-',$category['level']) . $category['category_name'] ?></option>
+                                <?php foreach($categories as $cat) : ?>
+                                    <?php $selected = ($cat['id'] == $category['parent_id']) ? 'selected' : '' ?>
+                                    <option value="<?php echo $cat['id'] ?>" <?php echo $selected ?>>
+                                        <?php echo str_repeat('-',$cat['level']) . $cat['category_name'] ?></option>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </select>
                     </div>
+
                     <div class="form-group">
-                        <label for="title">Ảnh đại diện:</label>
-                        <input type="file" name="image" id="image">
+                        <label for="content">Nội dung ngắn:</label>
+                        <p>
+                            <textarea name="article_content" style="width: 80%"><?php echo $category['category_intro'] ?></textarea>
+                        </p>
                     </div>
+
                     <div class="form-group">
                         <label for="content">Nội dung:</label>
                         <p>
-                            <textarea name="article_content" style="width: 80%"><?php echo $category['article_content'] ?></textarea>
+                            <textarea name="article_content" style="width: 80%"><?php echo $category['category_desc'] ?></textarea>
                         </p>
                     </div>
-                    <div class="form-group">
-                        <label for="status">Trạng thái:</label>
-                        <select name="status">
-                            <option value="0" <?php echo ($category['status'] == 0) ? 'selected' : ''; ?>>Ẩn</option>
-                            <option value="1" <?php echo ($category['status'] == 1) ? 'selected' : ''; ?>>Hiện</option>
-                        </select>
-                    </div>
+
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
 
