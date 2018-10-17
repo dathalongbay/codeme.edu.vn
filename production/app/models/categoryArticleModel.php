@@ -64,21 +64,31 @@ class categoryArticleModel extends Database {
 
     public function store($data) {
 
-        echo __METHOD__;
+       /* echo __METHOD__;
         echo '<pre>';
         print_r($data);
         echo '</pre>';
-        die;
+        die;*/
 
         if ($data['id'] > 0) {
             // Trường hợp edit
             $sql = "UPDATE category_article SET category_name='". $data['category_name'] ."',category_intro='".$data['category_intro']."',category_desc='".$data['category_desc']."',created=".$data['created'].",parent_id=".$data['parent_id'].",level=".$data['level']."  WHERE id=".$data['id'];
         } else {
+            if ($data['parent_id'] > 0) {
+                $parent = $this->getRow($data['parent_id']);
+                $level = $parent['level'] + 1;
+            } else {
+                $level = 1;
+            }
+
+            $data['created'] = '';
+
             // Trường hợp thêm mới
             $sql = "INSERT INTO category_article (category_name, category_intro, category_desc, created, parent_id, level)
-VALUES ('". $data['category_name'] ."', '".$data['category_intro']."', '".$data['category_desc']."', ".$data['created'].", ".$data['parent_id'].", ".$data['level'].")";
+VALUES ('". $data['category_name'] ."', '".$data['category_intro']."', '".$data['category_desc']."', '".$data['created']."', ".$data['parent_id'].", ".$level.")";
 
         }
+
 
         if ($this->conn->query($sql) === TRUE) {
             echo "New record created successfully";
