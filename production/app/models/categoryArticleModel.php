@@ -168,7 +168,16 @@ VALUES ('". $data['category_name'] ."', '".$data['category_intro']."', '".$data[
 
     public function delete($id) {
 
+        $tree = $this->getListCategoriesById($id);
+
         $sql = "DELETE FROM category_article WHERE id=".$id;
+
+        if(!empty($tree)) {
+            foreach ($tree as $child) {
+                $sql_child = "DELETE FROM category_article WHERE id=".$child['id'];
+                $this->conn->query($sql_child);
+            }
+        }
 
         if ($this->conn->query($sql) === TRUE) {
             echo "Delete record successfully";
