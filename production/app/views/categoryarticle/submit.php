@@ -17,8 +17,8 @@
                         <select name="parent_id">
                             <option value="0">None</option>
                             <?php if ($categories) : ?>
-                                <?php foreach($categories as $category) : ?>
-                                <option value="<?php echo $category['id'] ?>"><?php echo str_repeat('-',$category['level']) . $category['category_name'] ?></option>
+                                <?php foreach($categories as $cat) : ?>
+                                <option value="<?php echo $cat['id'] ?>"><?php echo str_repeat('-',$cat['level']) . $cat['category_name'] ?></option>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </select>
@@ -38,7 +38,7 @@
                     <div class="form-group">
                         <label for="content">Thời gian tạo:</label>
                         <p>
-                            <input type="text" name="created" class="form-control datetime" id="created">
+                            <input type="text" name="created" value="" class="form-control datetime" id="created">
                         </p>
                     </div>
 

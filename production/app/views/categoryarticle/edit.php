@@ -8,11 +8,11 @@
             <div class="inner-block">
                 <h1>Sửa danh mục</h1>
 
-                <form name="article" method="post" action="<?php echo SITE_URL . '?controller=article&action=store'?>" enctype="multipart/form-data">
+                <form name="article" method="post" action="<?php echo SITE_URL . '?controller=categoryarticle&action=store'?>" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?php echo $category['id'] ?>">
                     <div class="form-group">
                         <label for="title">Tiêu đề:</label>
-                        <input type="text" name="title" value="<?php echo $category['category_name'] ?>" class="form-control" id="title">
+                        <input type="text" name="category_name" value="<?php echo $category['category_name'] ?>" class="form-control" id="title">
                     </div>
                     <div class="form-group">
                         <label for="name">Chọn danh mục cha:</label>
@@ -32,14 +32,21 @@
                     <div class="form-group">
                         <label for="content">Nội dung ngắn:</label>
                         <p>
-                            <textarea name="article_content" style="width: 80%"><?php echo $category['category_intro'] ?></textarea>
+                            <textarea name="category_intro" style="width: 80%"><?php echo $category['category_intro'] ?></textarea>
                         </p>
                     </div>
 
                     <div class="form-group">
                         <label for="content">Nội dung:</label>
                         <p>
-                            <textarea name="article_content" style="width: 80%"><?php echo $category['category_desc'] ?></textarea>
+                            <textarea name="category_desc" style="width: 80%"><?php echo $category['category_desc'] ?></textarea>
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content">Thời gian tạo:</label>
+                        <p>
+                            <input type="text" name="created" value="<?php echo $category['created'] ?>" class="form-control datetime" id="created">
                         </p>
                     </div>
 
