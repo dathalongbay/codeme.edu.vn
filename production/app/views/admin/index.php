@@ -5,9 +5,9 @@
         <div class="mother-grid-inner">
             <?php require VIEW_PATH . '/partial/main-header.php';  ?>
             <div class="inner-block">
-                <h1>Quản lý bài viết</h1>
+                <h1>Quản lý người dùng</h1>
                 <div>
-                    <a href="<?php echo SITE_URL.'?controller=article&action=submit' ?>" class="btn btn-success">Thêm mới bài viết</a>
+                    <a href="<?php echo SITE_URL.'?controller=article&action=submit' ?>" class="btn btn-success">Thêm mới người dùng</a>
                 </div>
                 <table class="table">
                     <thead>
@@ -19,15 +19,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php if ($articles) : ?>
-                        <?php foreach ($articles as $article) : ?>
+                    <?php if ($admins) : ?>
+                        <?php foreach ($admins as $admin) : ?>
                             <tr>
-                                <td><?php echo $article['id'] ?></td>
-                                <td><?php echo $article['title'] ?></td>
-                                <td><?php echo $article['status'] ?></td>
+                                <td><?php echo $admin['id'] ?></td>
+                                <td><?php echo $admin['username'] ?></td>
+                                <td><?php echo $admin['password'] ?></td>
                                 <td>
-                                    <a class="btn btn-warning" href="<?php echo SITE_URL.'?controller=article&action=edit&id='.$article['id'] ?>">Sửa</a>
-                                    <a class="btn btn-danger remove" href="<?php echo SITE_URL.'?controller=article&action=delete&id='.$article['id'] ?>">Xóa</a>
+                                    <a class="btn btn-warning" href="<?php echo SITE_URL.'?controller=admin&action=edit&id='.$admin['id'] ?>">Sửa</a>
+                                    <a class="btn btn-danger remove" href="<?php echo SITE_URL.'?controller=admin&action=delete&id='.$admin['id'] ?>">Xóa</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

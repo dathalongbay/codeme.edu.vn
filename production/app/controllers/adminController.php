@@ -33,6 +33,7 @@ class adminController {
         $adminModel = new adminModel();
         $admins = $adminModel->getRows();
         $data = array();
+        $data['admins'] = $admins;
 
         return $this->view('admin', 'index', $data);
     }
