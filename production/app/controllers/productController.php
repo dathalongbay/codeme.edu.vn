@@ -7,7 +7,12 @@ class productController {
      */
     public function __construct()
     {
+        if ( !isset($_SESSION['login_user']) || empty($_SESSION['login_user']) ) {
 
+            $loginURL = SITE_URL . 'index.php?controller=login&action=index';
+            header("Location: $loginURL");
+            die;
+        }
     }
 
     /**
