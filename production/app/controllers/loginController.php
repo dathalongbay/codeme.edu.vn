@@ -86,7 +86,7 @@ class loginController {
 
         unset($_SESSION["login_user"]);
 
-        $loginURL = ADMIN_URL . 'index.php?controller=login&action=index';
+        $loginURL = SITE_URL . 'index.php?controller=login&action=index';
         header("Location: $loginURL");
         die;
     }
