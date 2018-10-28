@@ -14,7 +14,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Tiêu đề</th>
-                        <th>Trạng thái</th>
+                        <th>Password</th>
                         <th>Actions</th>
                     </tr>
                     </thead>

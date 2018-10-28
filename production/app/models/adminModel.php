@@ -43,6 +43,7 @@ class adminModel extends Database {
 
     public function store($data) {
 
+        $data['password'] = md5($data['password']);
         if ($data['id'] > 0) {
             // Trường hợp edit
             $sql = "UPDATE admins SET";
