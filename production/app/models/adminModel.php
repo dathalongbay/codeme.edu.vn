@@ -30,8 +30,8 @@ class adminModel extends Database {
 
     public function getLogin($username, $password) {
         $password = trim($password);
-        $sql = "SELECT * FROM admins WHERE username=" . trim($username);
-        $sql .= " password =" . md5($password);
+        $sql = "SELECT * FROM admins WHERE username='" . trim($username) . "'";
+        $sql .= " AND password ='" . md5($password) . "'";
 
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) {
