@@ -28,6 +28,21 @@ class adminModel extends Database {
         return $data;
     }
 
+    public function getLogin($username, $password) {
+        $password = trim($password);
+        $sql = "SELECT * FROM admins WHERE username=" . trim($username);
+        $sql .= " password =" . md5($password);
+
+        $result = $this->conn->query($sql);
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                return $row;
+            }
+        }
+
+        return false;
+    }
+
     public function getRow($id) {
         $data = null;
         $sql = "SELECT * FROM admins WHERE id=" . $id;
