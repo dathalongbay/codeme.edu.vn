@@ -19,9 +19,10 @@ class loginController {
     /**
      * Phuong thuc dung de hien thi view login
      */
-    public function index() {
+    public function indexAction() {
 
         $data = array();
+        echo __FILE__; die;
 
         return $this->view('login', 'index', $data);
 
@@ -30,14 +31,14 @@ class loginController {
     /**
      * Phuong thuc dung de dang nhap
      */
-    public function login() {
+    public function loginAction() {
 
     }
 
     /**
      * Phuong thuc nay duoc dung de dang xuat
      */
-    public function logout() {
+    public function logoutAction() {
 
     }
 
