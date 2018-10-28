@@ -1,6 +1,24 @@
 <?php
 class loginController {
 
+    public function __construct()
+    {
+        /**
+         * Generate admin 1 first time
+         */
+        $adminModel = new adminModel();
+        $admins = $adminModel->getRows();
+        if (empty($admins)) {
+            $data = array(
+                'username' => 'datdo',
+                'email' => 'dathalongbay@gmail.com',
+                'password' => 'a12345678',
+                'status' => 1
+            );
+            $adminModel->store($data);
+        }
+    }
+
     public function view($view = '', $action = '', $data = '') {
         ob_start();
 
