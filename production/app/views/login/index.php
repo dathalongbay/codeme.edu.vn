@@ -7,7 +7,7 @@
         </div>
         <div class="login-block">
             <form name="login" action="<?php echo SITE_URL . '?controller=login&action=login'?>" method="post">
-                <input type="text" name="email" placeholder="Email" required="">
+                <input type="text" name="username" placeholder="Username" required="">
                 <input type="password" name="password" class="lock" placeholder="Password">
                 <div class="forgot-top-grids">
                     <div class="forgot-grid">

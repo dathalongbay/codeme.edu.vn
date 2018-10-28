@@ -50,6 +50,29 @@ class loginController {
      */
     public function loginAction() {
 
+        if (isset($_POST) && !empty($_POST)) {
+
+            if (isset($_POST['username']) && isset($_POST['password'])
+                && (strlen($_POST['username']) > 5)  &&  (strlen($_POST['password']) > 5) ) {
+
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $adminModel = new adminModel();
+                $checkLogin = $adminModel->getLogin($username, $password);
+
+                if ($checkLogin == true) {
+                    // redirect ve trang chu
+                    $loginURL = SITE_URL . 'index.php?controller=index&action=index';
+                    header("Location: $loginURL");
+                    die;
+                }
+
+            }
+        }
+
+        $loginURL = SITE_URL . 'index.php?controller=login&action=index';
+        header("Location: $loginURL");
+        die;
     }
 
     /**
