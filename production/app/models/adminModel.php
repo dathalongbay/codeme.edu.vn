@@ -47,30 +47,30 @@ class adminModel extends Database {
         if ($data['id'] > 0) {
             // Trường hợp edit
             $sql = "UPDATE admins SET";
-            $sql .= "username ='". $data['username'] ."',";
-            $sql .= "password ='". $data['password'] ."',";
-            $sql .= "email ='". $data['email'] ."',";
-            $sql .= "name ='". $data['name'] ."',";
-            $sql .= "address ='". $data['address'] ."',";
-            $sql .= "phone ='". $data['phone'] ."',";
-            $sql .= "note ='". $data['note'] ."',";
-            $sql .= "status ='". $data['status'] ."',";
-            $sql .= "avatar ='". $data['avatar'] ."',";
-            $sql .= "WHERE id=".$data['id'];
+            $sql .= " username ='". $data['username'] ."',";
+            $sql .= " password ='". $data['password'] ."',";
+            $sql .= " email ='". $data['email'] ."',";
+            $sql .= " name ='". $data['name'] ."',";
+            $sql .= " address ='". $data['address'] ."',";
+            $sql .= " phone ='". $data['phone'] ."',";
+            $sql .= " note ='". $data['note'] ."',";
+            $sql .= " status ='". $data['status'] ."',";
+            $sql .= " avatar ='". $data['avatar'] ."',";
+            $sql .= " WHERE id=".$data['id'];
         } else {
             // Trường hợp thêm mới
             $sql = "INSERT INTO admins ";
             $sql .= " (username, password, email, name, address, phone, note, status, avatar) ";
-            $sql .= "VALUES ('". $data['username'] ."',";
-            $sql .= "'".$data['password']."',";
-            $sql .= "'".$data['email']."',";
-            $sql .= "'".$data['name']."',";
-            $sql .= "'".$data['address']."',";
-            $sql .= "'".$data['phone']."',";
-            $sql .= "'".$data['note']."',";
-            $sql .= "'".$data['status']."',";
-            $sql .= "'".$data['avatar']."',";
-            $sql .= ")";
+            $sql .= " VALUES ('". $data['username'] ."',";
+            $sql .= " '".$data['password']."',";
+            $sql .= " '".$data['email']."',";
+            $sql .= " '".$data['name']."',";
+            $sql .= " '".$data['address']."',";
+            $sql .= " '".$data['phone']."',";
+            $sql .= " '".$data['note']."',";
+            $sql .= " '".$data['status']."',";
+            $sql .= " '".$data['avatar']."',";
+            $sql .= " )";
 
         }
 
