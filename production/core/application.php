@@ -16,18 +16,11 @@ class Application {
         $controllerClass = $controller . 'Controller';
         $actionName = $action . 'Action';
 
-
         $controllerInstance = new $controllerClass();
-
-
 
         if (method_exists($controllerInstance, $actionName)) {
             $controllerInstance->$actionName();
         }
-
-
-
-
 
     }
 

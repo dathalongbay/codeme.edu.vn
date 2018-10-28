@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $admin_path = dirname(__FILE__);
 define("SITE_URL", "http://localhost/codeme.edu.vn/production/");
 define("ADMIN_PATH", $admin_path);
