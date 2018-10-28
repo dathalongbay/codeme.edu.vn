@@ -10,10 +10,16 @@ class loginController {
         $admins = $adminModel->getRows();
         if (empty($admins)) {
             $data = array(
+                'id' => 0,
                 'username' => 'datdo',
                 'email' => 'dathalongbay@gmail.com',
                 'password' => 'a12345678',
-                'status' => 1
+                'name' => '',
+                'address' => '',
+                'phone' => '',
+                'note' => '',
+                'status' => 1,
+                'avatar' => ''
             );
             $adminModel->store($data);
         }

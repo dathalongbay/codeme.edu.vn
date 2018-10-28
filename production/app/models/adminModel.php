@@ -70,7 +70,7 @@ class adminModel extends Database {
             $sql .= " phone ='". $data['phone'] ."',";
             $sql .= " note ='". $data['note'] ."',";
             $sql .= " status ='". $data['status'] ."',";
-            $sql .= " avatar ='". $data['avatar'] ."',";
+            $sql .= " avatar ='". $data['avatar'] ."'";
             $sql .= " WHERE id=".$data['id'];
         } else {
             // Trường hợp thêm mới
@@ -84,7 +84,7 @@ class adminModel extends Database {
             $sql .= " '".$data['phone']."',";
             $sql .= " '".$data['note']."',";
             $sql .= " '".$data['status']."',";
-            $sql .= " '".$data['avatar']."',";
+            $sql .= " '".$data['avatar']."'";
             $sql .= " )";
 
         }
