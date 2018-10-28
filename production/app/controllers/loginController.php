@@ -83,6 +83,12 @@ class loginController {
      */
     public function logoutAction() {
 
+
+        unset($_SESSION["login_user"]);
+
+        $loginURL = ADMIN_URL . 'index.php?controller=login&action=index';
+        header("Location: $loginURL");
+        die;
     }
 
 }
