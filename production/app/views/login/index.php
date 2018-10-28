@@ -6,6 +6,14 @@
             <h1>Login</h1>
         </div>
         <div class="login-block">
+
+            <?php if (isset($_SESSION['login_fail']) && ($_SESSION['login_fail'])) : ?>
+                <div class="alert alert-danger">
+                    <strong>Danger!</strong> <?php echo $_SESSION['login_fail'] ?>
+                </div>
+                <?php unset($_SESSION['login_fail']); ?>
+            <?php endif; ?>
+
             <form name="login" action="<?php echo SITE_URL . '?controller=login&action=login'?>" method="post">
                 <input type="text" name="username" placeholder="Username" required="">
                 <input type="password" name="password" class="lock" placeholder="Password">

@@ -72,6 +72,7 @@ class loginController {
             }
         }
 
+        $_SESSION['login_fail'] = 'Username hay mật khẩu không đúng';
         $loginURL = SITE_URL . 'index.php?controller=login&action=index';
         header("Location: $loginURL");
         die;
