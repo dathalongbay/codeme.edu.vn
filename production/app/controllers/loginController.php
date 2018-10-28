@@ -22,7 +22,6 @@ class loginController {
     public function indexAction() {
 
         $data = array();
-        echo __FILE__; die;
 
         return $this->view('login', 'index', $data);
 
